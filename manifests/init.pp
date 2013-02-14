@@ -30,15 +30,16 @@
 # Copyright 2012 PuppetLabs
 #
 class mongodb (
-  $enable_10gen    = false,
+  $bind_ip         = '127.0.0.1',
+  $port            = '27017',
+  $mongofork       = true,
   $init            = $mongodb::params::init,
+  $enable_10gen    = false,
   $location        = '',
   $packagename     = undef,
   $servicename     = $mongodb::params::service,
   $logpath         = '/var/log/mongo/mongod.log',
   $logappend       = true,
-  $mongofork       = true,
-  $port            = '27017',
   $dbpath          = '/var/lib/mongo',
   $nojournal       = undef,
   $cpu             = undef,
@@ -81,8 +82,8 @@ class mongodb (
     ensure => installed,
   }
 
-  file { '/etc/mongod.conf':
-    content => template('mongodb/mongod.conf.erb'),
+  file { '/etc/mongodb.conf':
+    content => template('mongodb/mongodb.conf.erb'),
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
