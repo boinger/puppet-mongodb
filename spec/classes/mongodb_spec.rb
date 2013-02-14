@@ -18,7 +18,7 @@ describe 'mongodb', :type => :class do
         should contain_package('mongodb-10gen').with({
           :name => 'mongodb'
         })
-        should contain_file('/etc/mongod.conf')
+        should contain_file('/etc/mongodb.conf')
         should contain_service('mongodb').with({
           :name => 'mongodb'
         })
@@ -73,7 +73,7 @@ describe 'mongodb', :type => :class do
         should contain_package('mongodb-10gen').with({
           :name => 'mongodb'
         })
-        should contain_file('/etc/mongod.conf')
+        should contain_file('/etc/mongodb.conf')
         should contain_service('mongodb').with({
           :name => 'mongodb'
         })
@@ -143,7 +143,7 @@ describe 'mongodb', :type => :class do
         should contain_package('mongodb-10gen').with({
           :name => 'mongodb-server'
         })
-        should contain_file('/etc/mongod.conf')
+        should contain_file('/etc/mongodb.conf')
         should contain_service('mongodb').with({
           :name => 'mongod'
         })
@@ -160,7 +160,7 @@ describe 'mongodb', :type => :class do
         should contain_package('mongodb-10gen').with({
           :name => 'mongo-10gen-server'
         })
-        should contain_file('/etc/mongod.conf')
+        should contain_file('/etc/mongodb.conf')
         should contain_service('mongodb').with({
           :name => 'mongod'
         })
