@@ -79,7 +79,7 @@ class mongodb (
 
   package { 'mongodb-10gen':
     name   => $package,
-    ensure => installed,
+    ensure => latest,
   }
 
   file { '/etc/mongodb.conf':
