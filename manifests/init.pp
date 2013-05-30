@@ -34,7 +34,7 @@ class mongodb (
   $port            = '27017',
   $mongofork       = true,
   $init            = $mongodb::params::init,
-  $enable_10gen    = false,
+  $enable_10gen    = true,
   $location        = '',
   $packagename     = undef,
   $servicename     = $mongodb::params::service,
