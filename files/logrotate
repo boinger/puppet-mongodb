@@ -1,0 +1,7 @@
+/var/log/mongo/mongod.log {
+    copytruncate
+    notifempty
+    missingok
+    size 50M
+    rotate 3
+}

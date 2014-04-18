@@ -82,12 +82,25 @@ class mongodb (
     ensure => latest,
   }
 
-  file { '/etc/mongodb.conf':
-    content => template('mongodb/mongodb.conf.erb'),
-    owner   => 'root',
-    group   => 'root',
-    mode    => 0644,
-    require => Package['mongodb-10gen'],
+  file {
+    '/etc/mongodb.conf':
+      content => template('mongodb/mongodb.conf.erb'),
+      owner   => root,
+      group   => root,
+      mode    => 0644,
+      require => Package['mongodb-10gen'];
+
+    '/etc/logrotate.d/mongodb':
+      source => "puppet:///modules/mongodb/logrotate",
+      owner   => root,
+      group   => root,
+      mode    => 0644;
+
+    '/etc/cron.d/logrotate-mongodb':
+      source => "puppet:///modules/mongodb/logrotate-cron",
+      owner   => root,
+      group   => root,
+      mode    => 0644;
   }
 
   service { 'mongodb':

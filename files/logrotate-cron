@@ -1,0 +1,2 @@
+# logrotate mongodb log hourly. managed by puppet
+17 * * * *  root  /usr/sbin/logrotate /etc/logrotate.d/mongodb
