@@ -3,5 +3,5 @@
     notifempty
     missingok
     size 50M
-    rotate 3
+    rotate 1
 }
